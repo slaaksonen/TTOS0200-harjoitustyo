@@ -19,3 +19,7 @@
 	- Mahdollisuus tulostaa kaikki tai osat tuoteryhmistä tiedostoon
 	- Tulostaa lopullinen "inventaario"
 	- Versionhallinta GitHubissa
+	
+## Alustava suunnitelma
+
+![](http://hajotus.net/~sebastianl/TTOS0200/kaavio.png)
