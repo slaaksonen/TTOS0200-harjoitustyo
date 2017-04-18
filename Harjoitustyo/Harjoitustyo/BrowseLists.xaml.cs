@@ -39,5 +39,7 @@ namespace Harjoitustyo
         {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+        
     }
 }

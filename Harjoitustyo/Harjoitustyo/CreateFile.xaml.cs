@@ -20,21 +20,16 @@ namespace Harjoitustyo
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AddNew : Page
+    public sealed partial class CreateFile : Page
     {
-        public AddNew()
+        public CreateFile()
         {
             this.InitializeComponent();
         }
 
-        private void MainHeader_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void TallennaButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(AddNew));
         }
 
         private void GoBack_button_Click(object sender, RoutedEventArgs e)

@@ -9,11 +9,11 @@
 
     <Grid Background="Gray">
         <StackPanel>
-            <TextBlock x:Name="MainHeader" FontSize="130" HorizontalAlignment="Left">TESTI OTSIKKO</TextBlock>
-            <Button x:Name="GoBack_button" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="GoBack_button_Click">Luo uusi inventaario</Button>
-            <TextBlock x:Name="ItemHeader" FontSize="130" HorizontalAlignment="Left">Tässä löydetyt tiedostot</TextBlock>
-            <Button x:Name="ListFiles_button" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="ListFiles_button_Click">Luo uusi inventaario</Button>
-            <TextBlock x:Name="ListFiles" />
+            <TextBlock x:Name="MainHeader" FontSize="130" HorizontalAlignment="Left">Selaa valmiita inventaarioita</TextBlock>
+            <Button x:Name="GoBack_button" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="GoBack_button_Click">Etusivulle</Button>
+            
+            <Button x:Name="ListFiles_button" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="ListFiles_button_Click">Näytä tiedostot</Button>
+            <TextBlock x:Name="ListFiles">TÄHÄN NE TULEE</TextBlock>
         </StackPanel>
     </Grid>
 </Page>

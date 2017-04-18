@@ -101,6 +101,9 @@
     <Compile Include="BrowseLists.xaml.cs">
       <DependentUpon>BrowseLists.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateFile.xaml.cs">
+      <DependentUpon>CreateFile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BrowseLists.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateFile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
