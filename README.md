@@ -20,6 +20,12 @@
 	- Tulostaa lopullinen "inventaario"
 	- Versionhallinta GitHubissa
 	
+## Ajankäyttö
+
+|Milloin|Aika|Kuka|
+|:--:|:--:|:--:|
+|4.4|1h|Sebastian
+	
 ## Alustava suunnitelma
 
 ![](http://hajotus.net/~sebastianl/TTOS0200/kaavio.png)
