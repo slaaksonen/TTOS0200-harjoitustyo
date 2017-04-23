@@ -7,7 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid Background="Gray">
+        <StackPanel>
+            <TextBlock x:Name="MainHeader" FontSize="130" HorizontalAlignment="Left" Text="Valitse inventaario"/>
+            <Button x:Name="Browse" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="BrowseList_Click">Valitse inventaario</Button>
+            <Button x:Name="Print" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="PrintList_Click">Valitse inventaario</Button>
+        </StackPanel>
+        
     </Grid>
 </Page>

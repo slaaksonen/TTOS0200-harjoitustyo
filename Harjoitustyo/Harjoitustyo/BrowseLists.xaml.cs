@@ -20,6 +20,9 @@ namespace Harjoitustyo
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+    /// 
+
+    
     public sealed partial class BrowseLists : Page
     {
         public BrowseLists()
@@ -29,11 +32,12 @@ namespace Harjoitustyo
 
         private void ListFiles_button_Click(object sender, RoutedEventArgs e)
         {
-            
-        
-            
-            
+
+            List.ItemsSource = AddNew.items;
+
         }
+
+        
 
         private void GoBack_button_Click(object sender, RoutedEventArgs e)
         {

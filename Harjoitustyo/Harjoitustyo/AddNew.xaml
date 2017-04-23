@@ -8,18 +8,34 @@
     mc:Ignorable="d">
 
     <Grid Background="Gray">
-        <RelativePanel Margin="50,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="500" />
+        </Grid.ColumnDefinitions>
+        <StackPanel>
             <TextBlock x:Name="MainHeader" FontSize="130" HorizontalAlignment="Left" Width="1500">Aloita uusi inventaario</TextBlock>
-            <TextBlock x:Name="TuoteTextBlock" TextWrapping="Wrap" Text="Tuote" Height="50" Width="50" HorizontalAlignment="Center" RelativePanel.Below="MainHeader"></TextBlock>
-            <TextBox x:Name="TuoteTextBox" Height="50" Width="400"  RelativePanel.RightOf="TuoteTextBlock" RelativePanel.Below="MainHeader" ></TextBox>
+        </StackPanel>
+        <RelativePanel Grid.Column="0" Margin="0,200,0,0">
+            <TextBlock x:Name="TuoteTextBlock" TextWrapping="Wrap" Text="Tuote" Height="50" Width="50" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="TuoteTextBox" Height="50" Width="400"  RelativePanel.RightOf="TuoteTextBlock"></TextBox>
             <TextBlock x:Name="KplTextBlock" TextWrapping="Wrap" Text="KPL" Height="50" Width="50" HorizontalAlignment="Center" RelativePanel.Below="TuoteTextBlock"></TextBlock>
             <TextBox x:Name="KplTextBox" Height="50" Width="400"  RelativePanel.RightOf="KplTextBlock" RelativePanel.Below="TuoteTextBox" ></TextBox>
             <TextBlock x:Name="AHintaTextBlock" TextWrapping="Wrap" Text="AHinta" Height="50" Width="50" HorizontalAlignment="Center" RelativePanel.Below="KplTextBlock"></TextBlock>
             <TextBox x:Name="AHintaTextBox" Height="50" Width="400"  RelativePanel.RightOf="AHintaTextBlock" RelativePanel.Below="KplTextBox" ></TextBox>
-            <TextBlock x:Name="YHintaTextBlock" TextWrapping="Wrap" Text="Total" Height="50" Width="50" HorizontalAlignment="Center" RelativePanel.Below="AHintaTextBlock"></TextBlock>
-            <TextBox x:Name="YHintaTextBox" Height="50" Width="400"  RelativePanel.RightOf="YHintaTextBlock" RelativePanel.Below="AHintaTextBox" ></TextBox>
-            <Button x:Name="TallennaButton" Content="Tallenna" HorizontalAlignment="Left" Margin="50,10,10,10" Height="32" VerticalAlignment="Top" Width="90" RelativePanel.Below="YHintaTextBox" Click="TallennaButton_Click" />
-            <Button x:Name="GoBack_button" Margin="0,10,10,10" Height="32" Width="90" Click="GoBack_button_Click" RelativePanel.RightOf="TallennaButton" RelativePanel.Below="YHintaTextBox">Etusivulle</Button>
-        </RelativePanel>    
+            <Button x:Name="TallennaButton" Content="Tallenna" HorizontalAlignment="Left" Margin="50,10,10,10" Height="32" VerticalAlignment="Top" Width="90" RelativePanel.Below="AHintaTextBox" Click="TallennaButton_Click" />
+            <Button x:Name="GoBack_button" Margin="0,10,10,10" Height="32" Width="90" Click="GoBack_button_Click" RelativePanel.RightOf="TallennaButton" RelativePanel.Below="AHintaTextBox">Etusivulle</Button>
+            <TextBlock x:Name="TallennettuTextBlock" RelativePanel.Below="TallennaButton" />
+        </RelativePanel>
+        
+        <RelativePanel Grid.Column="1" Margin="0,200,0,0">
+            <TextBlock x:Name="NimiTextBlock" TextWrapping="Wrap" Text="Nimi" Height="50" Width="90" HorizontalAlignment="Center" ></TextBlock>
+            <TextBox x:Name="NimiTextBox" x:FieldModifier="public" Height="50" Width="400"  RelativePanel.RightOf="NimiTextBlock"></TextBox>
+            <TextBlock x:Name="PvmTextBlock" TextWrapping="Wrap" Text="Päivämäärä" Height="50" Width="90" HorizontalAlignment="Center" RelativePanel.Below="NimiTextBlock"></TextBlock>
+            <TextBox x:Name="PvmTextBox" Height="50" Width="400"  RelativePanel.RightOf="PvmTextBlock" RelativePanel.Below="NimiTextBox" ></TextBox>
+            <Button x:Name="TallennaInventaarioButton" Content="Tallenna" HorizontalAlignment="Left" Margin="90,10,0,10" VerticalAlignment="Stretch" Width="90" RelativePanel.Below="PvmTextBlock" Click="TallennaInventaarioButton_Click"/>
+        </RelativePanel>
+
+        
+
     </Grid>
 </Page>

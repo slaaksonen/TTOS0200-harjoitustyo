@@ -101,6 +101,7 @@
     <Compile Include="BrowseLists.xaml.cs">
       <DependentUpon>BrowseLists.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateTextFile.cs" />
     <Compile Include="CreateFile.xaml.cs">
       <DependentUpon>CreateFile.xaml</DependentUpon>
     </Compile>

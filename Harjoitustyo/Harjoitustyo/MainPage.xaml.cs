@@ -29,7 +29,7 @@ namespace Harjoitustyo
 
         private void AddItem_button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CreateFile));
+            this.Frame.Navigate(typeof(AddNew));
         }
 
         private void PrintList_button_Click(object sender, RoutedEventArgs e)

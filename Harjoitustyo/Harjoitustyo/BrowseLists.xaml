@@ -8,12 +8,23 @@
     mc:Ignorable="d">
 
     <Grid Background="Gray">
-        <StackPanel>
-            <TextBlock x:Name="MainHeader" FontSize="130" HorizontalAlignment="Left">Selaa valmiita inventaarioita</TextBlock>
-            <Button x:Name="GoBack_button" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="GoBack_button_Click">Etusivulle</Button>
+        <RelativePanel>
+            <TextBlock x:Name="MainHeader" FontSize="110">Selaa viimeksi luotua inventaariota</TextBlock>
+            <Button x:Name="GoBack_button" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="GoBack_button_Click" RelativePanel.Below="MainHeader">Etusivulle</Button>
             
-            <Button x:Name="ListFiles_button" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="ListFiles_button_Click">Näytä tiedostot</Button>
-            <TextBlock x:Name="ListFiles">TÄHÄN NE TULEE</TextBlock>
-        </StackPanel>
+            <Button x:Name="ListFiles_button" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="ListFiles_button_Click" RelativePanel.Below="MainHeader" RelativePanel.RightOf="GoBack_button">Näytä inventaario</Button>
+            <ListView x:Name="List" Margin="0,40,0,0" Grid.Column="3" RelativePanel.Below="ListFiles_button">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock x:Name="Tuote" Text="{Binding Tuote}"  />
+                            <TextBlock x:Name="Kpl" Text="{Binding Kpl}" />
+                            <TextBlock x:Name="AHinta" Text="{Binding AHinta}" />
+                            <TextBlock x:Name="YHinta" Text="{Binding YHinta}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RelativePanel>
     </Grid>
 </Page>
