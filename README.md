@@ -24,6 +24,10 @@
 
 ![](http://hajotus.net/~sebastianl/TTOS0200/kaavio.png)
 
+## Zip - tiedosto
+
+![](http://student.labranet.jamk.fi/~K2132/harjoitustyo/)
+
 # Raportti
 
 ## Johdanto
