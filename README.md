@@ -26,7 +26,7 @@
 
 ## Zip - tiedosto
 
-[](http://student.labranet.jamk.fi/~K2132/harjoitustyo/)
+[TTOS0200-harjoitustyo](http://student.labranet.jamk.fi/~K2132/harjoitustyo/)
 
 # Raportti
 
