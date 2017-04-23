@@ -10,12 +10,15 @@
     <Grid Background="Gray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="500" />
-            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <StackPanel>
-            <TextBlock x:Name="MainHeader" FontSize="130" HorizontalAlignment="Left" Width="1500">Aloita uusi inventaario</TextBlock>
+            <TextBlock x:Name="MainHeader" FontSize="50" HorizontalAlignment="Left" Width="500">Inventaarion tiedot</TextBlock>
         </StackPanel>
-        <RelativePanel Grid.Column="0" Margin="0,200,0,0">
+        <StackPanel Grid.Column="1" >
+            <TextBlock x:Name="MainHeader2" FontSize="50" HorizontalAlignment="Left">Tallenna tiedot tiedostoon</TextBlock>
+        </StackPanel>
+        <RelativePanel Grid.Column="0" Margin="10,100,0,0">
             <TextBlock x:Name="TuoteTextBlock" TextWrapping="Wrap" Text="Tuote" Height="50" Width="50" HorizontalAlignment="Center"></TextBlock>
             <TextBox x:Name="TuoteTextBox" Height="50" Width="400"  RelativePanel.RightOf="TuoteTextBlock"></TextBox>
             <TextBlock x:Name="KplTextBlock" TextWrapping="Wrap" Text="KPL" Height="50" Width="50" HorizontalAlignment="Center" RelativePanel.Below="TuoteTextBlock"></TextBlock>
@@ -26,16 +29,12 @@
             <Button x:Name="GoBack_button" Margin="0,10,10,10" Height="32" Width="90" Click="GoBack_button_Click" RelativePanel.RightOf="TallennaButton" RelativePanel.Below="AHintaTextBox">Etusivulle</Button>
             <TextBlock x:Name="TallennettuTextBlock" RelativePanel.Below="TallennaButton" />
         </RelativePanel>
-        
-        <RelativePanel Grid.Column="1" Margin="0,200,0,0">
+        <RelativePanel Grid.Column="1" Margin="10,100,0,0">
             <TextBlock x:Name="NimiTextBlock" TextWrapping="Wrap" Text="Nimi" Height="50" Width="90" HorizontalAlignment="Center" ></TextBlock>
             <TextBox x:Name="NimiTextBox" x:FieldModifier="public" Height="50" Width="400"  RelativePanel.RightOf="NimiTextBlock"></TextBox>
             <TextBlock x:Name="PvmTextBlock" TextWrapping="Wrap" Text="Päivämäärä" Height="50" Width="90" HorizontalAlignment="Center" RelativePanel.Below="NimiTextBlock"></TextBlock>
             <TextBox x:Name="PvmTextBox" Height="50" Width="400"  RelativePanel.RightOf="PvmTextBlock" RelativePanel.Below="NimiTextBox" ></TextBox>
             <Button x:Name="TallennaInventaarioButton" Content="Tallenna" HorizontalAlignment="Left" Margin="90,10,0,10" VerticalAlignment="Stretch" Width="90" RelativePanel.Below="PvmTextBlock" Click="TallennaInventaarioButton_Click"/>
         </RelativePanel>
-
-        
-
     </Grid>
 </Page>

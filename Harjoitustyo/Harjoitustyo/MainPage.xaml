@@ -8,11 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="Gray">
-        <StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="647*"/>
+            <ColumnDefinition Width="1273*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
             <TextBlock x:Name="MainHeader" FontSize="130" HorizontalAlignment="Left" Text="Inventaario työkalu"/>
             <Button x:Name="AddItem_button" Margin="20,50,0,0"  FontSize="22"  Height="72" Width="273" Click="AddItem_button_Click">Luo uusi inventaario</Button>
-            <Button x:Name="PrintList_button" Margin="20,5,0,0" FontSize="22"  Height="72" Width="273" Click="PrintList_button_Click">Tulosta inventaario</Button>
-            <Button x:Name="BrowseLists_button"  Margin="20,5,0,0" FontSize="22"  Height="72" Width="273" Click="BrowseLists_button_Click">Selaa vanhoja tiedostoja</Button>
+            <Button x:Name="BrowseLists_button"  Margin="20,5,0,0" FontSize="22"  Height="72" Width="273" Click="BrowseLists_button_Click">Tarkastele inventaariota</Button>
         </StackPanel>
     </Grid>
 </Page>

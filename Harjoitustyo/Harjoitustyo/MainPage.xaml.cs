@@ -32,11 +32,6 @@ namespace Harjoitustyo
             this.Frame.Navigate(typeof(AddNew));
         }
 
-        private void PrintList_button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(PrintList));
-        }
-
         private void BrowseLists_button_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(BrowseLists));

@@ -22,7 +22,6 @@ namespace Harjoitustyo
     /// </summary>
     /// 
 
-    
     public sealed partial class BrowseLists : Page
     {
         public BrowseLists()
@@ -30,20 +29,29 @@ namespace Harjoitustyo
             this.InitializeComponent();
         }
 
-        private void ListFiles_button_Click(object sender, RoutedEventArgs e)
-        {
-
-            List.ItemsSource = AddNew.items;
-
-        }
-
-        
-
         private void GoBack_button_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
         }
 
+        private void InventaarioButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AddNew));
+        }
+
+        private async void OpenExplorer_button_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.Storage.Pickers.FileOpenPicker openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+            openPicker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+            openPicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.ComputerFolder;
+            openPicker.FileTypeFilter.Add(".txt");
+
+            Windows.Storage.StorageFile file = await openPicker.PickSingleFileAsync();
+
+            string text = await Windows.Storage.FileIO.ReadTextAsync(file);
+
+            textBlock.Text = text;
         
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace Harjoitustyo
 
             public override string ToString()
             {
-                return Tuote + "- " + Kpl + " - " + AHinta + " - " + YHinta;
+                return Tuote + "         -   " + Kpl + "   -   " + AHinta + "   -   " + YHinta;
             }
         }
 
@@ -40,22 +40,39 @@ namespace Harjoitustyo
             this.InitializeComponent();
         }
 
-
         public static  List<Items> items = new List<Items>();
-        private void TallennaButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            int yhteensa = Convert.ToInt32(KplTextBox.Text) * Convert.ToInt32(AHintaTextBox.Text);
-            items.Add(new Items
+        private async void TallennaButton_Click(object sender, RoutedEventArgs e)
+        {           
+           try
+           {
+                int yhteensa = Convert.ToInt32(KplTextBox.Text) * Convert.ToInt32(AHintaTextBox.Text);
+
+
+                items.Add(new Items
+                {
+                    Tuote = TuoteTextBox.Text,
+                    Kpl = KplTextBox.Text,
+                    AHinta = AHintaTextBox.Text,
+                    YHinta = Convert.ToString(yhteensa)
+                });
+
+                foreach (Items item in items)
+                {
+                    TallennettuTextBlock.Text ="Seuraava tieto tallennettu : " + Convert.ToString(item);
+                }
+            }
+           catch (FormatException)
             {
-                Tuote = TuoteTextBox.Text,
-                Kpl = KplTextBox.Text,
-                AHinta = AHintaTextBox.Text,
-                YHinta = Convert.ToString(yhteensa)
-            });
+                ContentDialog noWifiDialog = new ContentDialog
+                {
+                    Title = "Tekstissä tapahtui virhe",
+                    Content = "Tarkista että hinta ja kpl ovat numeroita",
+                    PrimaryButtonText = "Ok"
 
-            
+                };
 
+                ContentDialogResult result = await noWifiDialog.ShowAsync();
+            }                    
         }
 
         private void GoBack_button_Click(object sender, RoutedEventArgs e)
@@ -65,23 +82,21 @@ namespace Harjoitustyo
 
         public async void TallennaInventaarioButton_Click(object sender, RoutedEventArgs e)
         {
+            string FileName = NimiTextBox.Text;
+
+            Windows.Storage.StorageFolder storageFolder =
+                Windows.Storage.ApplicationData.Current.LocalFolder;
+            Windows.Storage.StorageFile sampleFile =
+                await storageFolder.CreateFileAsync(FileName,
+                    Windows.Storage.CreationCollisionOption.ReplaceExisting);
+
+            await Windows.Storage.FileIO.AppendTextAsync(sampleFile, "Tämä inventaario luotiin : " + PvmTextBox.Text + Environment.NewLine + "Tuote    -   Kpl    -  AHinta    -      Yhinta" + Environment.NewLine);
+
             foreach (object item in items)
-            {             
-
-                string FileName = NimiTextBox.Text;
-
-                Windows.Storage.StorageFolder storageFolder =
-                    Windows.Storage.ApplicationData.Current.LocalFolder;
-                Windows.Storage.StorageFile sampleFile =
-                    await storageFolder.CreateFileAsync(FileName,
-                        Windows.Storage.CreationCollisionOption.ReplaceExisting);
-
+            {
                 
-
-                await Windows.Storage.FileIO.WriteTextAsync(sampleFile, Convert.ToString(item));
+                await Windows.Storage.FileIO.AppendTextAsync(sampleFile, Convert.ToString(item) + Environment.NewLine);
             }
-            
-            
         }
     }
 }
