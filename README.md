@@ -14,17 +14,11 @@
 	
 ## Ominaisuudet
 
-	- Mahdollisuus poistaa ja lisätä tuotteet
+	- Mahdollisuus lisätä tuotteet
 	- Tuotteiden erittely (esim. nahkalaukku, matkalaukku, lompakko jne..)
-	- Mahdollisuus tulostaa kaikki tai osat tuoteryhmistä tiedostoon
+	- Mahdollisuus tulostaa kaikki tuoteryhmistä tiedostoon
 	- Tulostaa lopullinen "inventaario"
 	- Versionhallinta GitHubissa
-	
-## Ajankäyttö
-
-|Milloin|Aika|Kuka|
-|:--:|:--:|:--:|
-|4.4|1h|Sebastian
 	
 ## Alustava suunnitelma
 
